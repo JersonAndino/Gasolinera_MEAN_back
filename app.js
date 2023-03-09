@@ -5,12 +5,14 @@ var app=express();
 var sessions=require('express-session');
 const cookieParser = require('cookie-parser');
 const oneDay = 1000 * 60 * 60 * 24;
+var tipoRoutes=require('./routes/tipo.routes');
+var usuarioRoutes=require('./routes/usuario.routes');
 //var cors = require('cors');
 
 //app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-
+/*
 app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Headers','Authorization, X-API-KEY, X-Request-With, Content-Type,Accept, Access-Control-Allow, Request-Method')
@@ -32,7 +34,7 @@ app.use((req, res, next) => {
     res.setHeader('Content-Type', 'text/plain');
     next();
 });
-  
+  */
 app.use(sessions({
     secret: "miclave1234564asdasdvfgcdfgvszdfsdfdsf",
     saveUninitialized:true,
@@ -48,5 +50,6 @@ app.get('/',(req,res)=>{
     )
 })
 */
-
+app.use('/',tipoRoutes);
+app.use('/',usuarioRoutes);
 module.exports=app;
