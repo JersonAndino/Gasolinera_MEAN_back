@@ -6,7 +6,8 @@ var usuarioSchema=Schema({
     nombres:String,
     apellidos:String,
     cedula:String,
-    rol:String
+    rol:String,
+    contraseña:String
 });
 
 module.exports=mongoose.model('Usuario',usuarioSchema);

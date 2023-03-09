@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const oneDay = 1000 * 60 * 60 * 24;
 var tipoRoutes=require('./routes/tipo.routes');
 var usuarioRoutes=require('./routes/usuario.routes');
+var ventaRoutes=require('./routes/venta.routes');
 //var cors = require('cors');
 
 //app.use(cors());
@@ -52,4 +53,5 @@ app.get('/',(req,res)=>{
 */
 app.use('/',tipoRoutes);
 app.use('/',usuarioRoutes);
+app.use('/',ventaRoutes);
 module.exports=app;
